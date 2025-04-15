@@ -25,13 +25,18 @@ class TodoList:
     def complete(self):
         # Returns:
         #   A list of Todo instances representing the todos that are complete
-        pass
+        list_of_completes = []
+        for task in self.all_tasks:
+            if task.complete == True:
+                list_of_completes.append(task)
+        return list_of_completes
 
     def give_up(self):
         # Returns:
         #   Nothing
         # Side-effects:
         #   Marks all todos as complete
-        pass
+        for task in self.all_tasks:
+            task.complete = True
 
 
